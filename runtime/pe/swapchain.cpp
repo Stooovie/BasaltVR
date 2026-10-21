@@ -296,7 +296,7 @@ XrResult XRAPI_CALL createSwapchain(
                 *swapchain,
                 createInfo->width,
                 createInfo->height,
-                createInfo->format,
+                static_cast<int64_t>(normalizeFormat(createInfo->format)),
                 iosurfaceIds.data(),
                 kSwapchainImageCount * createInfo->arraySize);
         }
